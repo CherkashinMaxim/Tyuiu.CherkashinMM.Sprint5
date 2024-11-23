@@ -8,7 +8,7 @@ public class DataServiceTest
    [TestMethod] 
    public void Check()  
    {
-        string path = $@"{Directory.GetCurrentDirectory}\..\..\..\..\..\OutPutFileTask0.txt";
+        string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask0.txt");
 
         FileInfo fileInfo = new FileInfo(path);
         bool wait = true;
