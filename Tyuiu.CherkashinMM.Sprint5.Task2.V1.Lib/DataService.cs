@@ -15,7 +15,7 @@ public class DataService : ISprint5Task2V1
             for (int j = 0; j < matrix.GetLength(1); j++)
             {
                 if (matrix[i, j] % 2 != 0) matrix[i, j] = 0;
-                text += $"{matrix[i, j].ToString()} ";
+                text += $"{matrix[i, j].ToString()};";
             }
             text += "\n";
         }
