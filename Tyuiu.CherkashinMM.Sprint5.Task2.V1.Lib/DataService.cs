@@ -17,7 +17,7 @@ public class DataService : ISprint5Task2V1
                 if (matrix[i, j] % 2 != 0) matrix[i, j] = 0;
                 text += $"{matrix[i, j].ToString()};";
             }
-            text += "\n";
+            text = text.Substring(0, text.Length - 1) + "\n";
         }
 
         File.WriteAllText(path, text);
