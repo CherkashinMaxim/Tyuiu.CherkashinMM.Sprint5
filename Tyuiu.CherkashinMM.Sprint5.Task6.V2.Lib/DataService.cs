@@ -1,4 +1,5 @@
 using System.Text;
+using System.Text.RegularExpressions;
 using tyuiu.cources.programming.interfaces.Sprint5; 
  
 namespace Tyuiu.CherkashinMM.Sprint5.Task6.V2.Lib;
@@ -9,7 +10,8 @@ public class DataService : ISprint5Task6V2
     {
         string cyr_alpha = "¸éöóêåíãøùçõúôûâàïðîëäæýÿ÷ñìèòüáþÉÖÓÊÅÍÃ¨ØÙÇÕÚÔÛÂÀÏÐÎËÄÆÝß×ÑÌÈÒÜÁÞ";
         string text = File.ReadAllText(path, Encoding.UTF8);
-        int res = text.Count(c => (c >= 'À' && c <= 'ÿ') || c == '¸' || c == '¨');
+        string pattern = "[À-ßà-ÿ¨¸]";
+        int res = Regex.Matches(text, pattern).Count;
         return res;
     }
 } 
