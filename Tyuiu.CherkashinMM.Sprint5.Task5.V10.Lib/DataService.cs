@@ -9,10 +9,9 @@ public class DataService : ISprint5Task5V10
         int res = 0;
         foreach(var num in File.ReadAllLines(path)) 
         {
-            if(int.TryParse(num, out int number) && number % 2 == 0)
-            {
-                res += number;
-            }
+            if(!num.Contains(","))
+                if(int.Parse(num) % 2 == 0)
+                    res += int.Parse(num);
         }
         return res;
     }
