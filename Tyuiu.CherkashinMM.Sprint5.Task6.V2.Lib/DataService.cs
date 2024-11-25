@@ -9,12 +9,7 @@ public class DataService : ISprint5Task6V2
     {
         string cyr_alpha = "¸éöóêåíãøùçõúôûâàïðîëäæýÿ÷ñìèòüáþÉÖÓÊÅÍÃ¨ØÙÇÕÚÔÛÂÀÏÐÎËÄÆÝß×ÑÌÈÒÜÁÞ";
         string text = File.ReadAllText(path, Encoding.UTF8);
-        int res = 0;
-        foreach(char c in text)
-        {
-            if (cyr_alpha.Contains(c))
-                res++;
-        }
+        int res = text.Count(c => (c >= 'À' && c <= 'ÿ') || c == '¸' || c == '¨');
         return res;
     }
 } 
