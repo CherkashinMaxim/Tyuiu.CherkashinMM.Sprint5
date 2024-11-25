@@ -8,6 +8,7 @@ public class DataService : ISprint5Task6V2
     {
         string cyr_alpha = "¸éöóêåíãøùçõúôûâàïğîëäæıÿ÷ñìèòüáşÉÖÓÊÅÍÃ¨ØÙÇÕÚÔÛÂÀÏĞÎËÄÆİß×ÑÌÈÒÜÁŞ";
         string text = File.ReadAllText(path);
+        int p = int.Parse(text);
         int res = 0;
         foreach(char c in text)
         {
