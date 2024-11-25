@@ -11,7 +11,7 @@ public class DataService : ISprint5Task7V13
         string res = "";
         foreach(char a in text)
         {
-            if (char.IsUpper(a) && !(alpha.Contains(a)))
+            if (!(!char.IsUpper(a) && alpha.Contains(a)))
                 res += a;
         }
         File.WriteAllText(Path.Combine(Path.GetTempPath(), "OutPutDataFileTask7V13.txt"), res);
